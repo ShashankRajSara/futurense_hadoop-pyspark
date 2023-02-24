@@ -1,0 +1,95 @@
+		SPARK
+			- Distributed in-memory data processing framework
+			- Spark can support Local, HDFS, S3, Azure Blob, Azure Data Lake FS, Cassandra, etc.
+			- Multi Language support - Scala, Java, Python, SQL and R
+			
+			- MR vs Spark
+
+			- Spark Modes
+				- Local
+				- Standalone - uses it’s own cluster manager - master / workers
+				- YARN
+				- Mesos
+				- K8s
+
+			- Spark Architecture
+				- Driver
+					- Spark Context
+				- Cluster Manager
+				- Worker
+
+			- Spark Setup
+				STEP 1: Download and Setup Spark
+				STEP 2: Configure Spark to enable event logs
+				STEP 3: Launch PySpark shell
+
+		 	- Spark Modules
+				- Spark Core
+					- Spark Context - Coordinated job execution, cluster connection details, DAG
+					- Spark Session - Abstraction on different contexts - Spark Context, SQL Context, Hive Context, Streaming Context
+					- RDD
+						- Distributed, Immutable, Partitioned, Lazy Evaluated, Fault Tolerant
+						- Diff ways to create RDD
+							- Parallize the collection
+							- Loading Data from External File
+					- DAG (Directe Acyclic Graph)
+					- Transformation
+						- Narrow -> Map, Filter, FlatMap, etc..
+						- Wide - Repartition, Join, GroupByKey, ReduceByKey, AggregateByKey, Collaesce, etc..
+					- Action
+						- Count, Sum, Collect, Reduce, ForEach, etc..		
+
+					[1,2,3,4,5] -> 15
+					[(2013, [1,1,1]),(2020,[1,1,1,1,])] -> [(2013, 3), (2020, 4)] 
+					
+				- Spark SQL
+				- Spark Streaming
+				- Spark MLib
+				- Spring GraphX
+			
+
+			Transformations
+				- Map
+				- FlatMap
+				- Filter
+				- mapPartitions
+
+				- repartition
+				- coalesce
+				- distinct
+
+				- union
+				- intersection
+				
+				- join
+				- cogroup
+				- cartesian
+
+				- groupByKey
+				- reduceByKey
+				- aggregateByKey
+				- sortByKey
+
+			Actions
+				- count
+				- collect
+				- reduce
+				- sum
+				- min
+				- max
+				- mean
+				- forEach
+				- saveAsTextFile
+				- first
+				- take
+				- takeSample
+				- countByKey
+		
+			Persistence Level
+
+				- MEMORY_ONLY
+				- DISK_ONLY
+				- MEMORY_AND_DISK
+				- MEMORY_ONLY_2
+				- DISK_ONLY_2
+				- MEMORY_AND_DISK_2
