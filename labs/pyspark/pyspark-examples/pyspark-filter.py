@@ -10,8 +10,8 @@ arrayStructureData = [
         (("Anna","Rose",""),["Spark","Java","C++"],"NY","F",{"home":"Manhattan","work":"Wall Street"}),
         (("Julia","","Williams"),["CSharp","VB"],"OH","F",{"home":"City Center","work":"City Tech Park"}),
         (("Maria","Anne","Jones"),["CSharp","VB"],"NY","M",{"home":"Manhattan","work":"Wall Street"}),
-        (("Jen","Mary","Brown"),["CSharp","VB"],"NY","M"),
-        (("Mike","Mary","Williams"),["Python","VB"],"OH","M")
+        (("Jen","Mary","Brown"),["CSharp","VB"],"NY","M",{}),
+        (("Mike","Mary","Williams"),["Python","VB"],"OH","M",{})
         ]
         
 arrayStructureSchema = StructType([
