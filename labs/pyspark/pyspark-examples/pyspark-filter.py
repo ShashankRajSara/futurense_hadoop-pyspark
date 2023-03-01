@@ -6,10 +6,10 @@ from pyspark.sql.functions import col,array_contains
 spark = SparkSession.builder.appName('pyspark-examples').getOrCreate()
 
 arrayStructureData = [
-        (("James","","Smith"),["Java","Scala","C++"],"OH","M"),
-        (("Anna","Rose",""),["Spark","Java","C++"],"NY","F"),
-        (("Julia","","Williams"),["CSharp","VB"],"OH","F"),
-        (("Maria","Anne","Jones"),["CSharp","VB"],"NY","M"),
+        (("James","","Smith"),["Java","Scala","C++"],"OH","M",{"home":"City Center","work":"City Tech Park"}),
+        (("Anna","Rose",""),["Spark","Java","C++"],"NY","F",{"home":"Manhattan","work":"Wall Street"}),
+        (("Julia","","Williams"),["CSharp","VB"],"OH","F",{"home":"City Center","work":"City Tech Park"}),
+        (("Maria","Anne","Jones"),["CSharp","VB"],"NY","M",{"home":"Manhattan","work":"Wall Street"}),
         (("Jen","Mary","Brown"),["CSharp","VB"],"NY","M"),
         (("Mike","Mary","Williams"),["Python","VB"],"OH","M")
         ]
@@ -22,7 +22,8 @@ arrayStructureSchema = StructType([
              ])),
          StructField('languages', ArrayType(StringType()), True),
          StructField('state', StringType(), True),
-         StructField('gender', StringType(), True)
+         StructField('gender', StringType(), True),
+         StructField('address', MapType(StringType(), StringType()), True)
          ])
 
 
