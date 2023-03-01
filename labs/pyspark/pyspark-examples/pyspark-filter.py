@@ -48,4 +48,6 @@ df.filter(array_contains(df.languages,"Java")) \
 
 df.filter(df.name.lastname == "Williams") \
     .show(truncate=False) 
-    
+
+df.filter((df.address.work == 'Wall Street') & (array_contains(df.languages, 'Java')) & (to_csv(df.name).like('%Ann%'))) \ 
+    .show()
