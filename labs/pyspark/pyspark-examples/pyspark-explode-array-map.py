@@ -8,7 +8,7 @@ arrayData = [
         ('Michael',['Spark','Java',None],{'hair':'brown','eye':None}),
         ('Robert',['CSharp',''],{'hair':'red','eye':''}),
         ('Washington',None,None),
-        ('Jefferson',['1','2'],{})
+        ('Jefferson',['1','2'],{})]
 
 df = spark.createDataFrame(data=arrayData, schema = ['name','knownLanguages','properties'])
 df.printSchema()
