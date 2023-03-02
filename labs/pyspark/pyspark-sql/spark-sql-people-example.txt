@@ -36,7 +36,7 @@ newDf.show()
 newDf.select("name", "age").write.format("orc").save("/home/ubuntu/spark/orc/teenagers.orc")
 
 #Start Spark Shell with Avro dependency
-pyspark --packages org.apache.spark:spark-avro_2.12:3.0.1
+pyspark --packages org.apache.spark:spark-avro_2.12:3.3.2
 
 #Read the data in parquet from hdfs
 newDf = spark.read.format("parquet").load("/home/ubuntu/spark/parquet")
