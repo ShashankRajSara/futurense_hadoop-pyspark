@@ -10,7 +10,8 @@ df.select(df["name"], df["age"] + 1).show()
 df.filter(df["age"] > 21).show()
 df.groupBy("age").count().show()
 
-df.registerTempTable("people")
+#df.registerTempTable("people")
+df.createOrReplaceTempView("people")
 
 teenagers = sqlContext.sql("SELECT name, age FROM people WHERE age >= 13 AND age <= 19")
 teenagers.show()	// Displays records
