@@ -93,3 +93,64 @@
 				- MEMORY_ONLY_2
 				- DISK_ONLY_2
 				- MEMORY_AND_DISK_2
+				
+			Share Variables
+				Broadcast Variable
+				Accumulator
+
+			
+	Spark SQL
+
+			Data Frame
+			
+				- Create DataFram
+					- DataFrameReader -> spark.read() -> Load data from external source
+					- From RDD -> rdd.toDF()
+					- Using CreateDataFrame with RDD -> spark.createDataFrame(rdd)
+					- Using CreateDataFrame with List of Rows -> spark.createDataFrame([Row(),Row()]
+					- Using CreateDataFrame with List of Tuples -> spark.createDataFrame([(),()]
+					- Using CreateDataFrame with Pandas DF -> spark.createDataFrame(pandasDF)
+					- Using CreateDataFrame with explicit schema -> spark.createDataFrame(rdd,schema=list|string|structtype)
+
+				- Print Schema -> df.printSchema()
+				- List values -> df.show()
+				
+				- Select columns
+					- df.select(df.col, df[‘col’], “col”)
+
+
+				- Functions
+					- String Functions -contcat_ws, lower, upper,
+					- Math Functions
+					- Date Functions
+					- Window Functions
+					- etc.
+
+				- Columns
+					- Add Column - df.withColumn(‘col_name’, fun())
+					- Drop Column
+					- Rename Column
+				
+				- Filtering
+				- Grouping
+				- Aggregation
+				- Joins
+
+				- Write Data From DF
+				
+				- Create Data Frame with Complex Data Types
+					- Struct, Array, Map
+				- When Function
+				- Expr Function
+				- Missing Values Handling - Filter, Drop, Replace
+				- Cast Function
+				- Col, Lit function
+				- Flattening with Explode, Explode Outer, PosExplode, PosExplode Outer
+				- Filter
+				- GroupBy
+				- Array Contains, to_csv()
+				- Aggregate Functions
+				- Where
+				- Distinct
+				- OrderBy
+				
