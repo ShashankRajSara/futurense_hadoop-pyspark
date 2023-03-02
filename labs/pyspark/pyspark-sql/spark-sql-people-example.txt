@@ -1,5 +1,5 @@
 
-df = spark.read.json("file:///home/ubuntu/futurense_hadoop-pyspark/labs/dataset/customer/customer.json")
+df = spark.read.json("file:///home/ubuntu/futurense_hadoop-pyspark/labs/dataset/people/people.json")
 
 df.show()
 df.printSchema()
