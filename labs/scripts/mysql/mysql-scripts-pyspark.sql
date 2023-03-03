@@ -3,7 +3,7 @@ sudo mysql -u root -p
 
 -- Add sqoop user
 CREATE USER 'pyspark'@'localhost' IDENTIFIED BY 'pyspark';
-GRANT ALL PRIVILEGES ON *.* TO 'sqoop'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'pyspark'@'localhost' WITH GRANT OPTION;
 
 -- Setup data for sqoop demo
 CREATE SCHEMA pyspark_training;
