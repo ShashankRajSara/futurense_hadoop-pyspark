@@ -1,5 +1,5 @@
 #pyspark shell
-pyspark --jars /usr/share/java/mysql-connector-java.jar
+pyspark --jars /home/ubuntu/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar
 
 #Read data from db
 jdbcDF = spark.read \
