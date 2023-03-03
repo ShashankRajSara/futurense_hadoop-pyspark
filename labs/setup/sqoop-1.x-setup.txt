@@ -31,11 +31,20 @@ cd commons-lang-2.6
 cp commons-lang-2.6.jar $SQOOP_HOME/lib/
 rm $SQOOP_HOME/lib/commons-lang3-3.4.jar
 
+#Download MySQL Connector and Link to sqoop path
+wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.0.32.tar.gz
+tar xvf mysql-connector-j-8.0.32.tar.gz
+cd mysql-connector-j-8.0.32
+sudo ln -s /mysql-connector-j-8.0.32/mysql-connector-java.jar /opt/sqoop/lib/mysql-connector-java.jar
+
+
+
 ##Link mysql-connector-java library to sqoop path
-##NOTE: Mysql service should be installed, configured and started before this step
-sudo apt-get install libmysql-java
+##NOTE: Mysql service should be installed, configured and started before this step. 
+##DISCLAIMER: NOT WORKING WITH LATEST UBUNTU VERSION
+#sudo apt-get install libmysql-java
 #sudo apt install libmariadb-java
-sudo ln -s /usr/share/java/mysql-connector-java.jar /opt/sqoop/lib/mysql-connector-java.jar
+#sudo ln -s /usr/share/java/mysql-connector-java.jar /opt/sqoop/lib/mysql-connector-java.jar
 
 sqoop version
 (should show sqoop version details)
