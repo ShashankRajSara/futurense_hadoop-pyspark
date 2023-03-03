@@ -35,7 +35,8 @@ rm $SQOOP_HOME/lib/commons-lang3-3.4.jar
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.0.32.tar.gz
 tar xvf mysql-connector-j-8.0.32.tar.gz
 cd mysql-connector-j-8.0.32
-sudo ln -s /mysql-connector-j-8.0.32/mysql-connector-java.jar /opt/sqoop/lib/mysql-connector-java.jar
+cp mysql-connector-j-8.0.32.jar $SQOOP_HOME/lib/  
+#sudo ln -s /home/ubuntu/mysql-connector-j-8.0.32/mysql-connector-java.jar /opt/sqoop/lib/mysql-connector-java.jar
 
 
 
