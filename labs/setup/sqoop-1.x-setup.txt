@@ -24,6 +24,10 @@ export HADOOP_COMMON_HOME=/opt/hadoop
 export HADOOP_MAPRED_HOME=/opt/hadoop
 #############################
 
+#Download Commons Lang 2.6
+wget https://dlcdn.apache.org//commons/lang/binaries/commons-lang-2.6-bin.tar.gz
+tar xvf commons-lang-2.6-bin.tar.gz
+
 ##Link mysql-connector-java library to sqoop path
 ##NOTE: Mysql service should be installed, configured and started before this step
 sudo apt-get install libmysql-java
