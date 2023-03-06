@@ -35,9 +35,14 @@ if __name__ == "__main__":
     lines = spark\
         .readStream\
         .format('socket')\
-        .option('host', host)\
-        .option('port', port)\
+        .option('host', "localhost")\
+        .option('host', 9999)\
         .load()
+    
+        #.option('port', port)\
+        #.option('host', host)\
+        #.option('port', port)\
+        #.load()
 
     # Split the lines into words
     words = lines.select(
