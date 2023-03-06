@@ -36,7 +36,7 @@ if __name__ == "__main__":
         .readStream\
         .format('socket')\
         .option('host', "localhost")\
-        .option('host', 9999)\
+        .option('port', 9999)\
         .load()
     
         #.option('port', port)\
