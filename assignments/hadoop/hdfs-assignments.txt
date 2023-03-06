@@ -6,6 +6,11 @@ Assignment #1:
 	Merge the weather data file as weather3
 	Display the weather stats
 
+Assignment #2:
+	Create directory "movie" under /user/training
+	Load the data from ~/futurence_hadoop-pyspark/labs/dataset/movie/ratings.csv to /user/training/movie/ratings.csv
+	Display the movie data
+
 	 
 	
 
