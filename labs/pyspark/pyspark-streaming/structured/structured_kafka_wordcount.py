@@ -16,8 +16,11 @@
    <topics> Different value format depends on the value of 'subscribe-type'.
 
  Run the example
-    `$ bin/spark-submit examples/src/main/python/sql/streaming/structured_kafka_wordcount.py \
+    `$ bin/spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2 examples/src/main/python/sql/streaming/structured_kafka_wordcount.py \
     host1:port1,host2:port2 subscribe topic1,topic2`
+    
+ Run the example with PySpark Shell
+   pyspark --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2
 """
 from __future__ import print_function
 
