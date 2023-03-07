@@ -53,14 +53,22 @@ if __name__ == "__main__":
         .getOrCreate()
 
     # Create DataFrame representing the stream of input lines from connection to host:port
+    #lines = spark\
+    #    .readStream\
+    #    .format('socket')\
+    #    .option('host', host)\
+    #    .option('port', port)\
+    #    .option('includeTimestamp', 'true')\
+    #    .load()
+
     lines = spark\
         .readStream\
         .format('socket')\
-        .option('host', host)\
-        .option('port', port)\
+        .option('host', "localhost")\
+        .option('port', 9999)\
         .option('includeTimestamp', 'true')\
         .load()
-
+     
     # Split the lines into words, retaining timestamps
     # split() splits each line into an array, and explode() turns the array into multiple rows
     words = lines.select(
@@ -69,9 +77,17 @@ if __name__ == "__main__":
     )
 
     # Group the data by window and word and compute the count of each group
+    """
     windowedCounts = words.withWatermark("timestamp", "30 seconds") \
         .groupBy(\
         window(words.timestamp, windowDuration, slideDuration),
+        words.word
+    ).count().orderBy('window')
+    """
+    
+    windowedCounts = words.withWatermark("timestamp", "30 seconds") \
+        .groupBy(\
+        window(words.timestamp, "30 seconds", "10 seconds"),
         words.word
     ).count().orderBy('window')
 
