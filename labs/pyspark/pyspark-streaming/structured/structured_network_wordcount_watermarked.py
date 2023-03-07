@@ -96,7 +96,7 @@ if __name__ == "__main__":
         .writeStream\
         .outputMode('complete')\
         .format('console') \
-        .option("checkpointLocation", "checkpoint") \
+        .option("checkpointLocation", "wc-win-chkpnt") \
         .option('truncate', 'false')\
         .start()
 
