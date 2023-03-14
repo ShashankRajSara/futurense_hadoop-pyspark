@@ -17,6 +17,8 @@ virtualenv airflow_env
 #python3 -m venv py_env
 
 #STEP 4: Activate the Python Virtual Environment
+mkdir airflow
+export AIRFLOW_HOME=~/airflow_workspace/airflow
 
 source airflow_env/bin/activate
 
