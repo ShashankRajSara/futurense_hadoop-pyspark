@@ -153,4 +153,119 @@
 				- Where
 				- Distinct
 				- OrderBy
+
+		               - Joins
+					- Inner
+					- Full Outer
+					- Left Outer
+					- Right Outer			
+					- Left Semi
+					- Left Anti
+					- Cross
+					- Self
+			
+				- Window Functions
+					- row_number()
+					- rank()
+					- dense_rank()
+					- ntile()
+					- percent_rank()
+					- cume_dist()
+					- lag()
+					- lead()
+
+				- Writing SQL queries on DF
+					- Register DF as Temp Table or View
+					- spark.sql()
+
+				- Read/Write Data with DF
+					- spark.read => DataFrameReader
+					- df.write	 => DataFrameWriter
+
+					- spark.read.csv()		
+					- spark.read.options().csv()		
+
+					- df.write.csv()
+					- spark.read().options().csv()	
+
+				
+					- spark.read.load(path, format=csv, options)
+					- spark.read.format(“csv”).options().load()
+
+					- df.write.save(path, format=csv, options)
+					- df.write.format(“csv”).options().save()
+
+		Spark Streaming
+			Storm vs Kafka vs Flink vs Druid vs Spark Streaming
+			DStream
+				- Streaming data be converted into micro batches and each batch be processed and generates output
+				- Streaming Context 
+					- part of pyspark.streaming package
+					- need to pass Spark Context and batch interval while creating Streaming Context
+					- sources
+						- textFileStream
+						- socketTextStream 
+					- apply transformations on DStream
+					- start Streaming Context
+				- Windowing
+					- Sliding Window
+					- Tumbling Window
+
+				
+			Structured Streaming
+				- DataFrame API
+				- Unbounded table
+				- spark.readstream.format(“socket”).load()
+				- apply transformations on streaming DataFrame
+				- spark.writestream.outputMode(“complete|append|update”).format(“console|file”).start()
+
+				- Windowing
+				- Watermarking
+
+
+		Kafka
+			- Communication Styles - Sync vs Async
+			- Messaging Semantics
+				- Queue - point to point communication
+				- Topic 	- pub sub / one to many
+
+			- Kafka Architecture
+				- Producer - produces the events
+				- Broker	    - stores and process the events
+				- Consumer - consumes the events
+				- Zookeeper - co-ordination service and stores metadata
+
+		 	- Kafka Concepts
+				- Message/Event
+				- Topic
+				- Partition
+					- Leader
+					- Follower / ISR
+				- Replication
+
+				- Consumer Group
+
+				- Offset
+
+				- Create topic with 3 partitions on 3 broker Kafka cluster - partitions per broker?
+			
+
+			- Structured Streaming Kafka integration
+				- create Kafka streaming source and produce streaming DF
+					- spark.readStream
+							.format(“kafka”)
+								.option(“kafka.bootstrap.servers”, ”localhost:9092”)
+								.option(“subscribe”, ”movie-events”)
+								.option(“group.id”, ”movie-events-group”)
+
+							.load()
+				- apply transformations on streaming DF
+				- write streaming DF output into Kafka topics
+					- spark.writeStream
+							.outputMode(“complete|append|update”)
+							.format(“kafka”)
+								.option(“kafka.bootstrap.servers”, ”localhost:9092”)
+								.option(“topic”, “movie-events-out’)
+							.start()
+
 				
